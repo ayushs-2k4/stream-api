@@ -38,10 +38,11 @@ func (s *Stream[T]) Reduce(fn func(T, T) T, initial T) T {
 }
 
 // ForEach runs a side-effect function
-func (s *Stream[T]) ForEach(fn func(T)) {
+func (s *Stream[T]) ForEach(fn func(T)) *Stream[T] {
 	for _, v := range s.data {
 		fn(v)
 	}
+	return s
 }
 
 // Any checks if any element matches the condition

@@ -50,4 +50,10 @@ func main() {
 	// Output: [5 4 3 2 1]
 	fmt.Println("Reversed slice:", reversed)
 
+	forEach := streams.New(a).ForEach(func(i int) {
+		fmt.Printf("Element: %d, ", i)
+	})
+	fmt.Println()
+
+	fmt.Println("ForEach result:", forEach)
 }
