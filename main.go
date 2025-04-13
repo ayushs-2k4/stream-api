@@ -16,7 +16,7 @@ func main() {
 		}).
 		Map(func(i int) any {
 			return i * i // Square each number
-		}).ToSlice()
+		}).Collect()
 
 	// Output: [4 16]
 	fmt.Println("Filtered and mapped:", b)
@@ -45,7 +45,7 @@ func main() {
 	fmt.Println("Count of elements:", count)
 
 	// Reverse the slice
-	reversed := streams.New(a).Reverse().ToSlice()
+	reversed := streams.New(a).Reverse().Collect()
 
 	// Output: [5 4 3 2 1]
 	fmt.Println("Reversed slice:", reversed)
